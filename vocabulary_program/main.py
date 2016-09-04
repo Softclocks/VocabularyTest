@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 
-word_dict = {'car': 'kuruma'}
+word_dict = {'car': '車'}
 
-input = os.sys.argv[1]
 
 def main():
 
-    print ('car')
-    if input == '車':
-        print ('correct')
+    for key_word in word_dict.keys():
+        print ('What is the Japanese word for ' + key_word)
+        guessword = input()
 
-    else:
-        print ('incorrect')
+        if guessword == word_dict[key_word]:
+            print ('correct')
+        else:
+            print ('incorrect')
 
 
 
