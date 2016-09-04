@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import json
 
-word_dict = {'car': '車', 'fish': 'sakana'}
 
 def main():
     score = 0
@@ -23,6 +22,10 @@ def main():
 def calculate_score(word_length=1):
     return word_length ** 2
 
+def load_dictionary(file_path):
+    return json.load(open(file_path))
+
+word_dict = load_dictionary('C:/Users/Admin/PycharmProjects/VocabularyTest/dict.json')
 main()
 
 # TODO add timer
