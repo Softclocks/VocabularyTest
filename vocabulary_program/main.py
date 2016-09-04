@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import json
 
 word_dict = {'car': '車', 'fish': 'sakana'}
 
@@ -12,15 +12,15 @@ def main():
             guessword = input()
 
             if guessword == word_dict[key_word]:
-                score += calculate_score(word_length=len(word_dict[key_word]))
-                print('Correct! The Japanese word for {} is: {}'.format(key_word, word_dict[key_word]))
-                print('Your current score is {}'.format(score))
+                score += calculate_score(len(word_dict[key_word]))
+                print('Correct! The Japanese word for {} is: {}\nYour current score is {}'
+                      .format(key_word, word_dict[key_word], score))
                 break
 
             else:
                 print('Incorrect, {} is not the Japanese word for {} '.format(guessword, key_word))
 
-def calculate_score(word_length):
+def calculate_score(word_length=1):
     return word_length ** 2
 
 main()
